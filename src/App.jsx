@@ -1,26 +1,34 @@
 import React, { useState } from "react";
 
-function Manish() {
-  //   let state = useState(3);
-  //   console.log(state);
-  //   let show = state[0];
-  //   let setter = state[1];
-
-  let [show, setter] = useState(3);
-
+const Manish = () => {
+  const [state, setState] = useState(50);
+  let increase = () => {
+    setState(state + 1);
+  };
+  let decrease = () => {
+    setState(state - 1);
+  };
   return (
     <>
-      <h1>Hello world</h1>
-      <p>{show}</p>
+      <h1>{state}</h1>
       <button
-        onClick={() => {
-          setter(show + 1);
-        }}
+        // onClick={() => {
+        //   setState(state + 1);
+        // }}
+        onClick={increase}
       >
-        click me
+        +
+      </button>
+      <button
+        // onClick={() => {
+        //   setState(state - 1);
+        // }}
+        onClick={decrease}
+      >
+        -
       </button>
     </>
   );
-}
+};
 
 export default Manish;
